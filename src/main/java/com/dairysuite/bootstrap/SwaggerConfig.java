@@ -6,12 +6,11 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
-import com.google.common.base.Predicate;
-
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import static springfox.documentation.builders.PathSelectors.regex;
 
 @Configuration
 @EnableSwagger2
@@ -24,11 +23,6 @@ public class SwaggerConfig extends WebMvcConfigurationSupport{
                 .build();
              
     }
-	
-	private Predicate<String> regex(String string) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
