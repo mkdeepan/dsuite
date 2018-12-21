@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 29, 2018 at 12:33 AM
+-- Generation Time: Dec 21, 2018 at 06:00 AM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.20
 
@@ -152,6 +152,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `created_by` int(11) NOT NULL,
   `is_delete` int(11) NOT NULL DEFAULT '0',
+  `alias` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
@@ -159,23 +160,23 @@ CREATE TABLE IF NOT EXISTS `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `prod_name`, `aliass`, `brand_name`, `vendor_id`, `is_active`, `modify_at`, `modify_by`, `created_at`, `created_by`, `is_delete`) VALUES
-(1, 'Arokya SM 1000ml', 'S1000', 'Hatsun', 1, '1', '2014-07-04 10:36:16', 0, '0000-00-00 00:00:00', 1, 0),
-(2, 'Arokya SM 500ml', 'S500', 'Hatsun', 1, '1', '2014-07-04 10:37:45', 0, '0000-00-00 00:00:00', 1, 0),
-(3, 'Arokya SM 200ml', 'S200', 'Hatsun', 1, '1', '2014-07-04 10:37:54', NULL, '2014-07-04 06:53:13', 1, 0),
-(4, 'Arokya TM 500ml', 'T500', 'Hatsun', 1, '1', '2014-07-04 10:44:52', NULL, '2014-07-04 10:20:44', 1, 0),
-(5, 'Arokya FCM 1000ml', 'F1000', 'Hatsun', 1, '1', '2014-07-04 10:38:14', NULL, '2014-07-04 10:21:46', 1, 0),
-(6, 'Arokya FCM 500ml', 'F500', 'Hatsun', 1, '1', '2014-07-04 10:38:25', NULL, '2014-07-04 10:22:18', 1, 0),
-(7, 'Hatsun curd 500gm pouch', 'P500', 'Hatsun', 1, '1', '2014-07-04 10:38:38', NULL, '2014-07-04 10:23:48', 1, 0),
-(8, 'Hatsun curd 250gm pouch', 'P250', 'Hatsun', 1, '1', '2014-07-04 10:38:53', NULL, '2014-07-04 10:24:28', 1, 0),
-(9, 'Hatsun curd 160gm pouch', 'P160', 'Hatsun', 1, '1', '2014-07-04 10:39:04', NULL, '2014-07-04 10:24:57', 1, 0),
-(10, 'Hatsun curd 400gm cup', 'C400', 'Hatsun', 1, '1', '2014-07-04 10:39:19', NULL, '2014-07-04 10:25:36', 1, 0),
-(11, 'Hatsun curd 200gm cup', 'C200', 'Hatsun', 1, '1', '2014-07-04 10:39:32', NULL, '2014-07-04 10:26:03', 1, 0),
-(12, 'Hatsun curd 140gm cup', 'C140', 'Hatsun', 1, '1', '2014-07-04 10:39:44', NULL, '2014-07-04 10:26:35', 1, 0),
-(13, 'Hatsun curd 90gm cup', 'C90', 'Hatsun', 1, '1', '2014-07-04 10:39:57', NULL, '2014-07-04 10:26:59', 1, 0),
-(14, 'Hatsun curd 50gm cup', 'C50', 'Hatsun', 1, '1', '2014-07-04 10:37:33', NULL, '2014-07-04 10:28:07', 1, 0),
-(15, 'Hatsun Paneer 100gm', 'Pn100', 'Hatsun', 1, '1', '2014-07-04 11:08:53', NULL, '2014-07-04 10:50:18', 1, 0),
-(16, 'Hatsun paneer 200gm', 'Pn200', 'Hatsun', 1, '1', '2014-07-04 11:09:09', NULL, '2014-07-04 10:50:52', 1, 0);
+INSERT INTO `products` (`id`, `prod_name`, `aliass`, `brand_name`, `vendor_id`, `is_active`, `modify_at`, `modify_by`, `created_at`, `created_by`, `is_delete`, `alias`) VALUES
+(1, 'Arokya SM 1000ml', 'S1000', 'Hatsun', 1, '1', '2014-07-04 10:36:16', 0, '0000-00-00 00:00:00', 1, 0, NULL),
+(2, 'Arokya SM 500ml', 'S500', 'Hatsun', 1, '1', '2014-07-04 10:37:45', 0, '0000-00-00 00:00:00', 1, 0, NULL),
+(3, 'Arokya SM 200ml', 'S200', 'Hatsun', 1, '1', '2014-07-04 10:37:54', NULL, '2014-07-04 06:53:13', 1, 0, NULL),
+(4, 'Arokya TM 500ml', 'T500', 'Hatsun', 1, '1', '2014-07-04 10:44:52', NULL, '2014-07-04 10:20:44', 1, 0, NULL),
+(5, 'Arokya FCM 1000ml', 'F1000', 'Hatsun', 1, '1', '2014-07-04 10:38:14', NULL, '2014-07-04 10:21:46', 1, 0, NULL),
+(6, 'Arokya FCM 500ml', 'F500', 'Hatsun', 1, '1', '2014-07-04 10:38:25', NULL, '2014-07-04 10:22:18', 1, 0, NULL),
+(7, 'Hatsun curd 500gm pouch', 'P500', 'Hatsun', 1, '1', '2014-07-04 10:38:38', NULL, '2014-07-04 10:23:48', 1, 0, NULL),
+(8, 'Hatsun curd 250gm pouch', 'P250', 'Hatsun', 1, '1', '2014-07-04 10:38:53', NULL, '2014-07-04 10:24:28', 1, 0, NULL),
+(9, 'Hatsun curd 160gm pouch', 'P160', 'Hatsun', 1, '1', '2014-07-04 10:39:04', NULL, '2014-07-04 10:24:57', 1, 0, NULL),
+(10, 'Hatsun curd 400gm cup', 'C400', 'Hatsun', 1, '1', '2014-07-04 10:39:19', NULL, '2014-07-04 10:25:36', 1, 0, NULL),
+(11, 'Hatsun curd 200gm cup', 'C200', 'Hatsun', 1, '1', '2014-07-04 10:39:32', NULL, '2014-07-04 10:26:03', 1, 0, NULL),
+(12, 'Hatsun curd 140gm cup', 'C140', 'Hatsun', 1, '1', '2014-07-04 10:39:44', NULL, '2014-07-04 10:26:35', 1, 0, NULL),
+(13, 'Hatsun curd 90gm cup', 'C90', 'Hatsun', 1, '1', '2014-07-04 10:39:57', NULL, '2014-07-04 10:26:59', 1, 0, NULL),
+(14, 'Hatsun curd 50gm cup', 'C50', 'Hatsun', 1, '1', '2014-07-04 10:37:33', NULL, '2014-07-04 10:28:07', 1, 0, NULL),
+(15, 'Hatsun Paneer 100gm', 'Pn100', 'Hatsun', 1, '1', '2014-07-04 11:08:53', NULL, '2014-07-04 10:50:18', 1, 0, NULL),
+(16, 'Hatsun paneer 200gm', 'Pn200', 'Hatsun', 1, '1', '2014-07-04 11:09:09', NULL, '2014-07-04 10:50:52', 1, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -188,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `purchase_desc` (
   `purchase_id` int(11) NOT NULL,
   `prod_id` text NOT NULL,
   `prod_rate_per_unit` decimal(10,2) NOT NULL,
-  `prod_quan` text NOT NULL,
+  `prod_quan` decimal(10,2) NOT NULL,
   `prod_tax` decimal(10,2) NOT NULL,
   `sub_amount` decimal(10,2) NOT NULL,
   `prod_discount_id` int(11) NOT NULL,
@@ -196,6 +197,8 @@ CREATE TABLE IF NOT EXISTS `purchase_desc` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modify_at` datetime DEFAULT NULL,
+  `modify_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -279,10 +282,9 @@ INSERT INTO `rate_customer_mapping` (`id`, `prod_id`, `cust_id`, `rate`, `tax`, 
 CREATE TABLE IF NOT EXISTS `rate_master` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `prod_id` int(11) NOT NULL,
-  `w_sale_rate` decimal(10,2) NOT NULL,
-  `r_sale_rate` decimal(10,2) NOT NULL,
-  `p_rate` decimal(10,2) NOT NULL,
-  `p_tax` decimal(10,2) NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `price` double NOT NULL,
+  `tax` double NOT NULL,
   `created_by` int(11) NOT NULL,
   `updated_by` int(11) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

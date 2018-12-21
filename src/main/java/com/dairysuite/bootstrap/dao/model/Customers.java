@@ -1,13 +1,17 @@
-package com.dairysuite.bootstrap.model;
+package com.dairysuite.bootstrap.dao.model;
 
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -59,6 +63,20 @@ public class Customers implements Serializable{
 //	@Column(name = "customer_type")
 //	private Enum<?> customer_type;
 	
+	@OneToOne
+	@PrimaryKeyJoinColumn
+	private Users user;
+	
+//	private Users user;
+//	
+//	public Users getUser() {
+//		return user;
+//	}
+//
+//	public void setUser(Users user) {
+//		this.user = user;
+//	}
+
 	public Customers() { }
 
     public Customers(Integer id) { 
@@ -212,7 +230,7 @@ public class Customers implements Serializable{
 	@Column(name = "is_active")
 	private Integer is_active;
 	
-	@Column(name = "created_by")
+	@Column(name="created_by")
 	private Integer created_by;
 	
 	@Column(name = "updated_by")

@@ -1,4 +1,4 @@
-package com.dairysuite.bootstrap.model;
+package com.dairysuite.bootstrap.dao.model;
 
 import javax.transaction.Transactional;
 

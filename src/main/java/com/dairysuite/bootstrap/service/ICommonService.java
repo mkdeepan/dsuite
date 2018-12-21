@@ -2,7 +2,7 @@ package com.dairysuite.bootstrap.service;
 
 import java.util.List;
 
-import com.dairysuite.bootstrap.model.Customers;
+import com.dairysuite.bootstrap.dao.model.Customers;
 
 public interface ICommonService {
 	public List<Customers> getCustomer();

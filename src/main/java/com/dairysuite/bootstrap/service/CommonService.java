@@ -9,8 +9,8 @@ import javax.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.dairysuite.bootstrap.model.CustomerDAO;
-import com.dairysuite.bootstrap.model.Customers;
+import com.dairysuite.bootstrap.dao.model.CustomerDAO;
+import com.dairysuite.bootstrap.dao.model.Customers;
 
 @Repository
 public class CommonService implements ICommonService{
