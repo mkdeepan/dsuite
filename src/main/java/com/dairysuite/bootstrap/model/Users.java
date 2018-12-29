@@ -8,6 +8,9 @@ import org.springframework.validation.annotation.Validated;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 
 @Data
@@ -22,8 +25,9 @@ private Integer id;
 	@JsonProperty("username")
 	private String username;
 	
-	@JsonProperty("password")
-	private String password;
+	//@JsonIgnoreProperties
+	//@JsonProperty("password")
+	//private String password;
 	
 	@JsonProperty("firstname")
 	private String firstname;
