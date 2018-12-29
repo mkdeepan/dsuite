@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +12,7 @@ import com.dairysuite.bootstrap.dao.model.Customers;
 import com.dairysuite.bootstrap.model.Customer;
 import com.dairysuite.bootstrap.model.CustomerList;
 import com.dairysuite.bootstrap.model.Status;
+import com.dairysuite.bootstrap.model.Users;
 import com.dairysuite.bootstrap.service.CommonService;
 
 @Component
@@ -45,8 +47,12 @@ public class DsuiteApiImpl {
 				cust.setPincode(customer.getPincode());
 				cust.setRoute(customer.getRoute());
 				if(null!=customer.getUser())
+				{
 				System.out.println("User values---firstname--->" + customer.getUser().getFirstname()+"email value--->"+ customer.getUser().getEmail() );
-//				cust.setUpdatedAt(customer.getUpdated_at());
+				Users user= new DozerBeanMapper().map(customer.getUser(), Users.class);
+				cust.setUser(user);
+				}
+				//				cust.setUpdatedAt(customer.getUpdated_at());
 //				cust.setUpdatedBy(customer.getUpdated_by());
 				customerList.add(cust);
 			}
@@ -85,7 +91,11 @@ public class DsuiteApiImpl {
 		cust.setIsDelete(customer.get().getIs_delete());
 		cust.setLastName(customer.get().getLastname());
 //			cust.setPincode(customer.getPincode());
-		cust.setRoute(customer.get().getRoute());				
+		cust.setRoute(customer.get().getRoute());
+		
+		Users user= new DozerBeanMapper().map(customer.get().getUser(), Users.class);
+		System.out.println(user);
+		cust.setUser(user);
 //			cust.setUpdatedAt(customer.getUpdated_at());
 //			cust.setUpdatedBy(customer.getUpdated_by());
 		list.add(cust);

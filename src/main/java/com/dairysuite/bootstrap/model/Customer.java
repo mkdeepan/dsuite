@@ -69,8 +69,19 @@ public class Customer   {
 
   @JsonProperty("updatedAt")
   private String updatedAt = null;
+  
+  @JsonProperty
+  private Users user;
 
-  public Customer id(Integer id) {
+  public Users getUser() {
+	return user;
+}
+
+public void setUser(Users user) {
+	this.user = user;
+}
+
+public Customer id(Integer id) {
     this.id = id;
     return this;
   }
