@@ -44,11 +44,13 @@ public class GetCustomerDetailsApiController implements GetCustomerDetailsApi {
     }
 
     public ResponseEntity<CustomerList> getCustomerById(@ApiParam(value = "ID of customer",required=true) @PathVariable("cusId") Integer cusId) {
+    	System.out.println("inside the getCustomer by id------>*********"+cusId);
     	CustomerList cust = impl.getCustomer(cusId);
         return new ResponseEntity<CustomerList> (cust,HttpStatus.OK);
     }
 
     public ResponseEntity<CustomerList> getCustomers() {
+    	System.out.println("inside the getCustomers------>*********");
     	CustomerList cust = impl.getCustomers();
         return new ResponseEntity<CustomerList>(cust,HttpStatus.OK);
     }

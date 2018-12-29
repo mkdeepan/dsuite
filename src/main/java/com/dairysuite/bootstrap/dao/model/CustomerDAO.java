@@ -14,13 +14,13 @@ import org.springframework.data.repository.CrudRepository;
  * @author netgloo
  */
 @Transactional
-public interface CustomerDAO extends CrudRepository<Customers, Long> {
+public interface CustomerDAO extends CrudRepository<Customers, Integer> {
 
   /**
    * Return the user having the passed email or null if no user is found.
    * 
    * @param email the user email.
    */
-  public Customers findById(Integer id);
+  //public Customers findById(Integer id);
 
 } // class UserDao

@@ -2,6 +2,7 @@ package com.dairysuite.bootstrap.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -23,19 +24,21 @@ public class CommonService implements ICommonService{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Customers> getCustomer() {
-		List <Customers> cust = new ArrayList<Customers>();
+		/*List <Customers> cust = new ArrayList<Customers>();
 		String hql = "FROM Customers";
 		cust = entityManager.createQuery(hql).getResultList();
 		System.out.println("Cusotmers size::"+cust.size());
-		return cust;
+		return cust;*/
+		return (List<Customers>) customerDAO.findAll();
 	}
 
 	@Override
-	public Customers getCustomer(Integer cid) {
-		Customers cust = null;
+	public Optional<Customers> getCustomer(Integer cid) {
+		Optional<Customers> cust = null;
 	    try {
+	    	System.out.println("inside the get customer by id method------------->"+cid);
 	    	cust = customerDAO.findById(cid);	
-	    	System.out.println("resp:: ");
+	    	System.out.println("resp:: address------------------------>>>>>>"+cust);
 	    }
 	    catch (Exception ex) {
 	      System.out.println("err");
